@@ -15,7 +15,7 @@
 WickedPdf.config = { 
 	#exe_path: wkhtmltopdf_path , wkhtmltopdf: wkhtmltopdf_path
 
-# DESCOMENTAR ESTA LINEA PARA QUE CREE PDF LOCALHOST
+# DESCOMENTAR ESTA LINEA PARA QUE CREE PDF LOCALHOST EN WINDOWS EN MAC QUEDA COMENTADA
 	#:exe_path => 'bin\wkhtmltopdf\bin\wkhtmltopdf-64bit.exe'
 
 

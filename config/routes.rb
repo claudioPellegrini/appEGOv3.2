@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :compras
   resources :venta
   resources :stocks
   resources :movimientos
@@ -17,9 +18,8 @@ end
   resources :menus do
   	resources :productos
   end
-
+  resources :compras
   resources :empresas
-  resources :venta
 
   get 'welcome/index'
 

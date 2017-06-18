@@ -97,14 +97,13 @@ class MenusController < ApplicationController
 
   # CREAR PDF MENUS
   def crear_pdfs_menu
-    @menus = Menu.order('fecha DESC').all
-    @menus.each do |m|
-      if Time.now.to_date <= m.fecha.to_date
-         @menu = m
-       end
-     end
-    pdf = WickedPdf.new.pdf_from_string( 
-      render_to_string( :template => 'menus/menudeldia.pdf.erb' ))
+    # @menus = Menu.order('fecha DESC').all
+    # @menus.each do |m|
+    #   if Time.now.to_date <= m.fecha.to_date
+    #      @menu = m
+    #   end
+    # end
+    pdf = WickedPdf.new.pdf_from_string(render_to_string( :template => 'menus/menudeldia.pdf.erb' ))
     save_path = Rails.root.join('public','Menudeldia.pdf')
       File.open(save_path, 'wb') do |file|
         file << pdf

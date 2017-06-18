@@ -7,5 +7,5 @@ class Producto < ApplicationRecord
 	validates :descripcion, presence: {message: "^Debe ingresar una descripción"}
 	validates :tipo_id, presence: {message: "^Debe seleccionar un tipo"}
 	validates :precio, presence: {message: "^Debe indicar un precio"}
-	
+	#scope :por_menus, ->(_menus) {joins(:menus).where(menu: _menus)}
 end
