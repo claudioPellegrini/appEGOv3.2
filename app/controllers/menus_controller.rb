@@ -97,6 +97,8 @@ class MenusController < ApplicationController
 
   # CREAR PDF MENUS
   def crear_pdfs_menu
+    # Deje comentado pq da error Muestra mal los productos elegidos
+
     # @menus = Menu.order('fecha DESC').all
     # @menus.each do |m|
     #   if Time.now.to_date <= m.fecha.to_date
@@ -108,7 +110,7 @@ class MenusController < ApplicationController
       File.open(save_path, 'wb') do |file|
         file << pdf
       end
-    enviar_correos
+    #enviar_correos
   end
 
 

@@ -12,39 +12,48 @@
   <% end %>
 
   <div class="panel-body form-group">   
-        <% if @tipos.present? %>
-      <% @tipos.each do |t| %>
-        
-        <p><label><%= t.nombre %></label></p>
-        
-        <% @productos.each do |producto| %>
-        
+    <% if @tipos.present? %>
+      <% @tipos.each do |t| %>       
+        <p><label><%= t.nombre %></label></p>        
+        <% @productos.each do |producto| %>        
           <%if producto.tipo && producto.tipo.nombre==t.nombre %>        
             <div class="field">
-              <%= check_box_tag "productos[]", producto.id  %> <%= producto.nombre %>
-              
+              <%= check_box_tag "productos[]", producto.id %> <%= producto.nombre %>            
             </div>
             <br>
-          <%else%>
-        
+          <%else%>        
           <%end%>
         <%end%>
-    <%end%>
+      <%end%>
     <%end%>
     
-  <p><label>BEBIDAS </label></p>
+    
+    <% if @bebidas.present? %>
+    <p><label>BEBIDAS </label></p>
     <% @bebidas.each do |bebida| %>
               
           <div class="field">
-            <%= check_box_tag "bebidas[]", bebida.id  %> <%= bebida.nombre %>
+            <%= check_box_tag "bebidas[]", bebida.id   %> <%= bebida.nombre %>
             
           </div>
           <br>
     <%end%>
+    <%end%>
+
   </div>
 
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="col-md-12">
+      <div class="btn-group btn-group-justified">
+        
+        <div class="btn-group">
+        <%= f.submit "Realizar Compra", class: 'btn btn-info ' %>
+        </div>
+        <div class="btn-group">
+        <%= link_to 'Cancelar', compras_path, class: 'btn btn-info'  %>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 <% end %>

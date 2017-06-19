@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   resources :compras
   resources :venta
-  resources :stocks
   resources :movimientos
   devise_for :cuenta 
 

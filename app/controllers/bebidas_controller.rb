@@ -71,4 +71,4 @@ class BebidasController < ApplicationController
     def bebida_params
       params.require(:bebida).permit(:nombre, :tipo, :tamanio, :precio)
     end
-end
+  end
